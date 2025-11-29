@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoyalWashing - Services</title>
+  <link rel="stylesheet" href="service.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="logo">RoyalWashing</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="service.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="service-hero">
+  <h1>Our Professional Services</h1>
+  <p>Premium washing, ironing & fabric care with expert handling.</p>
+</section>
+
+<!-- SERVICE CARDS -->
+<section class="service-grid">
+
+  <div class="service-card fade-up">
+    <div class="icon">🧺</div>
+    <h3>Washing</h3>
+    <p>Deep-clean washing with quality detergents.</p>
+    <button class="book-btn" onclick="openForm('Washing')">Book Now</button>
+  </div>
+
+  <div class="service-card fade-up">
+    <div class="icon">👕</div>
+    <h3>Ironing</h3>
+    <p>Crisp and perfect ironing for all clothes.</p>
+    <button class="book-btn" onclick="openForm('Ironing')">Book Now</button>
+  </div>
+
+  <div class="service-card fade-up">
+    <div class="icon">✨</div>
+    <h3>Wash & Iron</h3>
+    <p>Complete care package for your garments.</p>
+    <button class="book-btn" onclick="openForm('Wash & Iron')">Book Now</button>
+  </div>
+
+  <div class="service-card fade-up">
+    <div class="icon">🏠</div>
+    <h3>Curtains</h3>
+    <p>Curtains cleaned with professional care.</p>
+    <button class="book-btn" onclick="openForm('Curtain Cleaning')">Book Now</button>
+  </div>
+
+  <div class="service-card fade-up">
+    <div class="icon">🛏️</div>
+    <h3>Blankets</h3>
+    <p>Heavy blanket washing with expert process.</p>
+    <button class="book-btn" onclick="openForm('Blanket Washing')">Book Now</button>
+  </div>
+
+  <div class="service-card fade-up">
+    <div class="icon">💼</div>
+    <h3>Professional Laundry</h3>
+    <p>Premium care for uniforms & workwear.</p>
+    <button class="book-btn" onclick="openForm('Professional Laundry')">Book Now</button>
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="workflow">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">1. Choose Service</div>
+    <div class="step">2. Schedule Pickup</div>
+    <div class="step">3. We Process</div>
+    <div class="step">4. Fast Delivery</div>
+  </div>
+</section>
+
+<!-- MODAL FORM -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <h2>Book Service</h2>
+    <p id="selectedService"></p>
+
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="location" placeholder="Your Current Location" required>
+      <input type="number" id="phone" placeholder="Phone Number" required>
+      <textarea id="notes" placeholder="Notes (optional)"></textarea>
+
+      <button type="submit" class="submit-btn">Submit</button>
+      <button class="close-btn" type="button" onclick="closeForm()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<script src="service.js"></script>
+
+</body>
+</html>

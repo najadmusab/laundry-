@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book — RoyalWashing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand"><div class="logo">RoyalWashing</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#service">Service</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <div class="nav-right"><a href="index.html" class="login-btn">Back</a></div>
+    </div>
+  </header>
+
+  <main style="padding:30px;">
+    <div style="max-width:900px;margin:0 auto;background:linear-gradient(180deg,#0b0b0b,#071018);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);">
+      <h2 style="color:var(--accent)">Book Your Order</h2>
+      <p style="color:var(--muted)">Fill details below. We will confirm by phone / WhatsApp.</p>
+
+      <form id="orderPageForm" style="display:grid;grid-template-columns:1fr 320px;gap:14px;margin-top:12px">
+        <div>
+          <label>Name</label>
+          <input name="name" required type="text" placeholder="Full name" />
+
+          <label>Phone</label>
+          <input name="phone" required type="tel" placeholder="9526XXXXXX" />
+
+          <label>Address</label>
+          <input name="address" required type="text" placeholder="House No, Street" />
+
+          <label>Location</label>
+          <select name="location" required>
+            <option value="">Choose area</option>
+            <option>Malappuram</option><option>Manjeri</option><option>Koottilangadi</option>
+          </select>
+
+          <label>Service Type</label>
+          <select name="serviceType" required>
+            <option value="">Select</option>
+            <option>Wash</option><option>Iron</option><option>Wash + Iron</option><option>Dry Clean</option>
+          </select>
+        </div>
+
+        <aside style="background:var(--card);padding:12px;border-radius:8px">
+          <label>Cloth types</label>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <label style="background:#0d0d0d;padding:8px;border-radius:8px"><input type="checkbox" name="cloth" value="Shirt"> Shirt</label>
+            <label style="background:#0d0d0d;padding:8px;border-radius:8px"><input type="checkbox" name="cloth" value="Pant"> Pant</label>
+            <label style="background:#0d0d0d;padding:8px;border-radius:8px"><input type="checkbox" name="cloth" value="Blanket"> Blanket</label>
+            <label style="background:#0d0d0d;padding:8px;border-radius:8px"><input type="checkbox" name="cloth" value="Inners"> Inners</label>
+            <label style="background:#0d0d0d;padding:8px;border-radius:8px"><input type="checkbox" name="cloth" value="Other"> Other</label>
+          </div>
+
+          <label>Number of Clothes</label>
+          <input name="count" type="number" min="1" value="1">
+
+          <label>Pickup Time</label>
+          <input name="pickupTime" type="datetime-local">
+
+          <label>Notes</label>
+          <textarea name="notes" rows="4" placeholder="Any special care..."></textarea>
+
+          <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
+            <button type="reset" class="btn cta-ghost">Reset</button>
+            <button id="submitOrder" class="btn" type="submit">Submit</button>
+          </div>
+        </aside>
+      </form>
+      <p style="color:var(--muted);font-size:13px;margin-top:12px">By submitting you agree to our <a href="privacy.html" style="color:var(--accent)">Privacy Policy</a> and <a href="terms.html" style="color:var(--accent)">Terms & Conditions</a>.</p>
+    </div>
+  </main>
+
+  <script>
+    // Simple submit handler (replace with Firestore or backend later)
+    document.getElementById('orderPageForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = new FormData(this);
+      const cloths = [];
+      this.querySelectorAll('input[name="cloth"]:checked').forEach(c => cloths.push(c.value));
+      const data = {
+        name: form.get('name'),
+        phone: form.get('phone'),
+        address: form.get('address'),
+        location: form.get('location'),
+        serviceType: form.get('serviceType'),
+        clothTypes: cloths,
+        count: form.get('count'),
+        pickupTime: form.get('pickupTime'),
+        notes: form.get('notes'),
+        createdAt: new Date().toISOString()
+      };
+      console.log('Order:', data);
+      alert('Order submitted (demo). We will contact you soon.');
+      this.reset();
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
