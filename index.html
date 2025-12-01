@@ -1,117 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RoyalWashing - Services</title>
-  <link rel="stylesheet" href="service.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RoyalWashing — Premium Laundry</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">RoyalWashing</div>
+      </div>"
+      "
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="logo">RoyalWashing</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services/index.html">Service</a>
+        <a href="about contact/about.html">About</a>
+        <a href="about contact/contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="order.html" class="login-btn">Book Now</a>
+        <button id="hamburger" class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="service.html" class="active">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <!-- HERO TRIANGLE SECTION -->
+  <main>
+    <section class="hero-wrap" id="home">
+      <div class="hero">
+        <div class="tri" aria-hidden="true"></div>
 
-    <button class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+        <div class="hero-content" role="region" aria-label="Intro">
+          <h1 class="hero-title">Professional Laundry & Ironing — Doorstep Pickup</h1>
+          <div class="hero-sub">RoyalWashing offers premium washing and pressing services, same-day pickup, and careful handling for all fabric types. Trusted by families & events.</div>
 
-<!-- HERO -->
-<section class="service-hero">
-  <h1>Our Professional Services</h1>
-  <p>Premium washing, ironing & fabric care with expert handling.</p>
-</section>
+          <div class="hero-cta">
+            <a class="btn" href="order.html">Book Now</a>
+            <a class="btn cta-ghost" href="tel:9526226011">Call: 9526226011</a>
+          </div>
+        </div>
 
-<!-- SERVICE CARDS -->
-<section class="service-grid">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card">
+            <img src="images/Bosch Washing Repair Kandivali_ provides top-notch….jpg" alt="Washing machine" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="service-card fade-up">
-    <div class="icon">🧺</div>
-    <h3>Washing</h3>
-    <p>Deep-clean washing with quality detergents.</p>
-    <button class="book-btn" onclick="openForm('Washing')">Book Now</button>
-  </div>
-
-  <div class="service-card fade-up">
-    <div class="icon">👕</div>
-    <h3>Ironing</h3>
-    <p>Crisp and perfect ironing for all clothes.</p>
-    <button class="book-btn" onclick="openForm('Ironing')">Book Now</button>
-  </div>
-
-  <div class="service-card fade-up">
-    <div class="icon">✨</div>
-    <h3>Wash & Iron</h3>
-    <p>Complete care package for your garments.</p>
-    <button class="book-btn" onclick="openForm('Wash & Iron')">Book Now</button>
-  </div>
-
-  <div class="service-card fade-up">
-    <div class="icon">🏠</div>
-    <h3>Curtains</h3>
-    <p>Curtains cleaned with professional care.</p>
-    <button class="book-btn" onclick="openForm('Curtain Cleaning')">Book Now</button>
-  </div>
-
-  <div class="service-card fade-up">
-    <div class="icon">🛏️</div>
-    <h3>Blankets</h3>
-    <p>Heavy blanket washing with expert process.</p>
-    <button class="book-btn" onclick="openForm('Blanket Washing')">Book Now</button>
-  </div>
-
-  <div class="service-card fade-up">
-    <div class="icon">💼</div>
-    <h3>Professional Laundry</h3>
-    <p>Premium care for uniforms & workwear.</p>
-    <button class="book-btn" onclick="openForm('Professional Laundry')">Book Now</button>
-  </div>
-
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="workflow">
-  <h2>How It Works</h2>
-  <div class="steps">
-    <div class="step">1. Choose Service</div>
-    <div class="step">2. Schedule Pickup</div>
-    <div class="step">3. We Process</div>
-    <div class="step">4. Fast Delivery</div>
-  </div>
-</section>
-
-<!-- MODAL FORM -->
-<div id="orderModal" class="modal">
-  <div class="modal-content">
-    <h2>Book Service</h2>
-    <p id="selectedService"></p>
-
-    <form id="orderForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="text" id="location" placeholder="Your Current Location" required>
-      <input type="number" id="phone" placeholder="Phone Number" required>
-      <textarea id="notes" placeholder="Notes (optional)"></textarea>
-
-      <button type="submit" class="submit-btn">Submit</button>
-      <button class="close-btn" type="button" onclick="closeForm()">Cancel</button>
-    </form>
+<div class="slider-container">
+  <div class="slider-track" id="sliderTrack">
+    <img src="images/download.jpg" alt="Jeans" />
+    <img src="images/The Art of Ironing_ The Key to Elegance and the Perfect Impression_Ironing clothes isn’t just about removing wrinkles; it’s an essential part of maintaining your wardrobe and achieving a polished loo._Prolongs Garmen___" alt="Ironed Shirts" />
+    <img src="images/Types of Garment Pressing Equipment and Methods.jpg" alt="Blankets" />
+    <img src="images/Dry-Cleaning in Singapore_ All you need to know.jpg" alt="House" />
+    <img src="images/Will Goose Down Blanket Be Fluffy After Washing_.jpg" alt="House" />
+    
   </div>
 </div>
 
-<script src="service.js"></script>
+    </section>
 
+    <p class="info">We treat every garment with care — modern machines, gentle detergents, and skilled staff ensure excellent results.</p>
+    <div class="quote">“Clean Clothes, Clear Mind.”</div>
+
+    <!-- BIG IMAGE + CARD -->
+    <section class="big-section" aria-label="Offer">
+       <img src="images/Washing Machines Isuzu Machine With Water In It Open On The Black Background Backgrounds _ JPG Free Download - Pikbest.jpg" alt="Big Washing Visual" />
+
+      <aside class="big-card" aria-label="Order card">
+        <h3>Instant Booking</h3>
+        <p>Pickup from your doorstep and delivery after professional cleaning. Choose service, number of items and preferred pickup time.</p>
+        <div class="price">Starting ₹25 per item</div>
+
+        <div style="display:flex;gap:10px;">
+          <a class="btn" href="order.html">Book Now</a>
+          <a class="btn" href="tel:9526226011">Call</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="cards" id="service" aria-label="Services">
+      <article class="card">
+        <div class="thumb" style="background-image:url(images/Post\ by\ The\ Laundry\ Alternative.jpg);"></div>
+        <div class="body">
+          <h4>Family Laundry</h4>
+          <p>Daily household washing and ironing, subscription available.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" style="background-image:url(images/catring.jpg);"></div>
+        <div class="body">
+          <h4>Catering & Events</h4>
+          <p>Bulk services for functions, parties and quick turnaround.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" style="background-image:url('images/Bosch\ Washing\ Repair\ Kandivali_\ provides\ top-notch….jpg');"></div>
+        <div class="body">
+          <h4>Premium Care</h4>
+          <p>Delicates, sarees and special fabrics handled by our expert team.</p>
+        </div>
+      </article>
+           <article class="card">
+        <div class="thumb" style="background-image: url(images/Curtains\ add\ elegance\ and\ style\ to\ any\ room\,\ but….jpg);"></div>
+        <div class="body">
+          <h4>curtain</h4>
+          <p>Curtains cleaned with professional care for dust-free, fresh and long-lasting fabric.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- TWO PROFESSIONAL PARAGRAPHS ABOVE FOOTER -->
+    <section class="pro-para">
+      <div class="pro-inner">
+        <p><strong>Why RoyalWashing?</strong> We combine industry-grade machines, eco-friendly solutions and trained technicians to deliver spotless garments with quick turnaround. Safety and fabric-care is our top priority — every item is inspected, treated and packed with hygiene protocols.</p>
+
+        <p><strong>Our Promise:</strong> Transparent pricing, secure pickup & delivery, and responsive support. For events and bulk orders we provide customized plans and priority slots so your needs are handled efficiently.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site" id="contact">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h5>RoyalWashing</h5>
+          <p>Malappuram, Koottilangadi<br>Padinattummuri 676506</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>📧 royalwashing@gmail.com</p>
+          <p>📞 9526226011</p>
+          <p>📞 9567226075</p>
+          <p>Instagram: <a href="https://instagram.com/" target="_blank" rel="noopener" style="color:#56c8ff">@royalwashing</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <p><a href="about.html">About</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="privacy.html">Privacy Policy</a></p>
+          <p><a href="terms.html">Terms & Conditions</a></p>
+        </div>
+      </div>
+      <div class="copyright">© 2025 RoyalWashing — All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
